@@ -1,0 +1,13 @@
+<div style="display: flex; align-items:center; justify-content:center; height: 100vh">
+  <div style="width: 50%; background-color: #efefef; border-radius: 2px; padding: 1em">
+      <h1 style="font-size:24px">RETRIEVED DATA...</h1>
+      <div style="min-height:400px; overflow-y: scroll">
+      <% @pushes.order(:created_at).each do |push| %>
+        <div><%= push.created_at.strftime('%M/%m/%Y %l:%M %p') %> : <%= push.data %></div>
+      <% end %>
+
+      </div>
+
+  </div>
+
+</div>
