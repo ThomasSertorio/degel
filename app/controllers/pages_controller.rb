@@ -1,11 +1,7 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :dashboard ]
-
-  def home
-  end
 
   def dashboard
-    @pushes = Push.all
+    @pushes = Push.order(created_at: :desc).all
   end
 
 end

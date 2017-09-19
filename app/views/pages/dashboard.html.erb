@@ -4,7 +4,12 @@
         <h1 style="font-size:24px">RETRIEVED DATA</h1>
         <div style="max-height:400px; overflow-y: scroll">
         <% @pushes.order(:created_at).each do |push| %>
-          <div><%= push.created_at.strftime('%M/%m/%Y %l:%M %p') %> : <%= push.data %></div>
+          <div>
+            <%= push.created_at.strftime('%M/%m/%Y %l:%M %p') %><br/>
+            Reg1: <%= push.data["reg1"] %> | Reg2: <%= push.data["reg2"] %> | Reg3: <%= push.data["reg3"] %> | Reg4: <%= push.data["reg4"] %> | Reg5: <%= push.data["reg5"] %> | Reg6: <%= push.data["reg6"] %> | Reg7: <%= push.data["reg7"] %> | Reg8: <%= push.data["reg8"] %> | Reg9: <%= push.data["reg9"] %> | Reg10: <%= push.data["reg10"] %> | Reg11: <%= push.data["reg11"] %> | Reg12: <%= push.data["reg12"] %><br/>
+            ----------------------------
+            <br/>
+          </div>
         <% end %>
 
         </div>
