@@ -1,12 +1,41 @@
 <div class="container">
+  <div>
+    <p>TODO:</p>
+    <ul>
+      <li>Intégrer une image (svg, png) ou du HTML d'un aiguillage en vertical. Voir exemple ci dessous pour intégration avec assets</li>
+      <li>Placer les capteurs autour de / sur l'aiguillage</li>
+      <li>Ajouter un titre (genre supervision), un logo Eurotunnel</li>
+      <li>Bonus: Faire tout ça avec style et peut-être en déclinaison du très beau logo Eurotunnel ! On est pas obligé de faire un truc moche</li>
+      <li>Bonus: Homogénéiser les styles choisis:  plan + capteurs, de la section de log, de la page de login...</li>
+      <li>Bonus: gérer en js, un refresh automatique de la page toutes les X seconds</li>
+      <li>Bonus: Au hover sur les capteurs, afficher un tooltip avec de la data supplémentaire (@last_measure.data)</li>
+    </ul>
+  </div>
+  <div>
+    <div class="sensor">
+      <span class="sensor-status <%= @last_measure.data['reg1'].to_i >= 1 ? 'sensor-status_true' : 'sensor-status_false' %>"></span>
+      <span class="sensor-name">Capteur 1</span>
+    </div>
+    <div class="sensor">
+      <span class="sensor-status <%= @last_measure.data['reg2'].to_i >= 1 ? 'sensor-status_true' : 'sensor-status_false' %>"></span>
+      <span class="sensor-name">Capteur 2</span>
+    </div>
+    <div class="sensor">
+      <span class="sensor-status <%= @last_measure.data['reg3'].to_i >= 1 ? 'sensor-status_true' : 'sensor-status_false' %>"></span>
+      <span class="sensor-name">Capteur 3</span>
+    </div>
+  </div>
+  <div>
+    <%= image_tag ('aiguillage.jpg'), class: "some_class_to_define_in_css" %>
+  </div>
   <div style="display: flex; align-items:center; justify-content:center; height: 100vh">
     <div style="width: 90%; background-color: #efefef; border-radius: 2px; padding: 1em">
         <h1 style="font-size:24px">RETRIEVED DATA</h1>
         <div style="max-height:400px; overflow-y: scroll">
-        <% @pushes.order(:created_at).each do |push| %>
+        <% @pushes.each do |push| %>
           <div>
-            <%= push.created_at.strftime('%D/%m/%Y %l:%M %p') %><br/>
-            Reg1: <%= push.data["reg1"] %> | Reg2: <%= push.data["reg2"] %> | Reg3: <%= push.data["reg3"] %> | Reg4: <%= push.data["reg4"] %> | Reg5: <%= push.data["reg5"] %> | Reg6: <%= push.data["reg6"] %> | Reg7: <%= push.data["reg7"] %> | Reg8: <%= push.data["reg8"] %> | Reg9: <%= push.data["reg9"] %> | Reg10: <%= push.data["reg10"] %> | Reg11: <%= push.data["reg11"] %> | Reg12: <%= push.data["reg12"] %><br/>
+            <%= push.created_at.strftime('%d/%m/%Y %l:%M %p') %><br/>
+            <%= push.data %><br/>
             ----------------------------
             <br/>
           </div>
