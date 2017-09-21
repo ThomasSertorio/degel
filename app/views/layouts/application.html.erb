@@ -3,12 +3,20 @@
   <head>
     <title>EUROTUNNEL Supervision</title>
     <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
   <body>
+    <div class="logo">
+      <%= image_tag('eurotunnel.logo.svg') %>
+    </div>
+    <% if user_signed_in? %>
+      <%= link_to destroy_user_session_path, method: :delete, class: "sign_out" do %>
+        <i class="fa fa-sign-out"></i>
+      <% end %>
+    <% end %>
+
     <%#= render 'shared/navbar' %>
     <%#= render 'shared/flashes' %>
     <%= yield %>

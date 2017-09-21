@@ -48,16 +48,16 @@
             </g>
             <g id="Sensors" mask="url(#mask-2)">
                 <g transform="translate(222.000000, 91.000000)">
-                    <g id="Sensor.3">
-                        <title><%= @last_measure.data %></title>
+                    <g id="Sensor.3" class="sensor_svg">
+                        <title>Capteur 1</title>
                         <use fill="<%= @last_measure.data['reg3'].to_i >= 1 ? '#27ae60' : '#e74c3c' %>" fill-rule="evenodd" xlink:href="#path-7"></use>
                     </g>
-                    <g id="Sensor.2">
-                        <title><%= @last_measure.data %></title>
+                    <g id="Sensor.2" class="sensor_svg">
+                        <title>Capteur 2</title>
                         <use fill="<%= @last_measure.data['reg2'].to_i >= 1 ? '#27ae60' : '#e74c3c' %>" fill-rule="evenodd" xlink:href="#path-9"></use>
                     </g>
-                    <g id="Sensor.1">
-                        <title><%= @last_measure.data %></title>
+                    <g id="Sensor.1" class="sensor_svg">
+                        <title>Capteur 3</title>
                         <use fill="<%= @last_measure.data['reg1'].to_i >= 1 ? '#27ae60' : '#e74c3c' %>" fill-rule="evenodd" xlink:href="#path-11"></use>
                     </g>
                 </g>
