@@ -9,23 +9,8 @@
         <path d="M1.88679245,5.66037736 L796.358614,5.66037736" id="path-5"></path>
         <path d="M1.88679245,88.6792453 L798.193683,88.6792453" id="path-6"></path>
         <circle id="path-7" cx="314.5" cy="13.5" r="13.5"></circle>
-        <filter x="-22.2%" y="-22.2%" width="144.4%" height="144.4%" filterUnits="objectBoundingBox" id="filter-8">
-            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
-        </filter>
         <circle id="path-9" cx="13.5" cy="218.5" r="13.5"></circle>
-        <filter x="-22.2%" y="-22.2%" width="144.4%" height="144.4%" filterUnits="objectBoundingBox" id="filter-10">
-            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
-        </filter>
         <circle id="path-11" cx="307.5" cy="225.5" r="13.5"></circle>
-        <filter x="-22.2%" y="-22.2%" width="144.4%" height="144.4%" filterUnits="objectBoundingBox" id="filter-12">
-            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
-        </filter>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="train.switch">
@@ -66,15 +51,15 @@
             <g id="Sensors" mask="url(#mask-2)">
                 <g transform="translate(222.000000, 91.000000)">
                     <g id="Sensor.3">
-                        <!-- <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-7"></use> -->
+                        <title><%= @last_measure.data %></title>
                         <use fill="<%= @last_measure.data['reg3'].to_i >= 1 ? '#27ae60' : '#e74c3c' %>" fill-rule="evenodd" xlink:href="#path-7"></use>
                     </g>
                     <g id="Sensor.2">
-                        <!-- <use fill="black" fill-opacity="1" filter="url(#filter-10)" xlink:href="#path-9"></use> -->
+                        <title><%= @last_measure.data %></title>
                         <use fill="<%= @last_measure.data['reg2'].to_i >= 1 ? '#27ae60' : '#e74c3c' %>" fill-rule="evenodd" xlink:href="#path-9"></use>
                     </g>
                     <g id="Sensor.1">
-                        <!-- <use fill="black" fill-opacity="1" filter="url(#filter-12)" xlink:href="#path-11"></use> -->
+                        <title><%= @last_measure.data %></title>
                         <use fill="<%= @last_measure.data['reg1'].to_i >= 1 ? '#27ae60' : '#e74c3c' %>" fill-rule="evenodd" xlink:href="#path-11"></use>
                     </g>
                 </g>

@@ -1,16 +1,25 @@
 <div class="container">
 
+  <div class="flex center">
+    <section>
+      <%= image_tag('eurotunnel.logo.svg') %>
+    </section>
+    <section>
+      <h1>SUPERVISION</h1>
+    </section>
+  </div>
+
   <section>
     <p>TODO:</p>
     <ul>
-      <li>Intégrer une image (svg, png) ou du HTML d'un aiguillage en vertical. Voir exemple ci dessous pour intégration avec assets</li>
-      <li>Placer les capteurs autour de / sur l'aiguillage</li>
-      <li>Ajouter un titre (genre supervision), un logo Eurotunnel</li>
-      <li>Bonus: Faire tout ça avec style et peut-être en déclinaison du très beau logo Eurotunnel ! On est pas obligé de faire un truc moche</li>
-      <li>Bonus: Homogénéiser les styles choisis:  plan + capteurs, de la section de log, de la page de login...</li>
-      <li>Bonus: Mettre un favicon</li>
+      <!-- <li>Intégrer une image (svg, png) ou du HTML d'un aiguillage en vertical. Voir exemple ci dessous pour intégration avec assets</li> -->
+      <!-- <li>Placer les capteurs autour de / sur l'aiguillage</li> -->
+      <!-- <li>Ajouter un titre (genre supervision), un logo Eurotunnel</li> -->
+      <!-- <li>Bonus: Faire tout ça avec style et peut-être en déclinaison du très beau logo Eurotunnel ! On est pas obligé de faire un truc moche</li> -->
+      <!-- <li>Bonus: Homogénéiser les styles choisis:  plan + capteurs, de la section de log, de la page de login...</li> -->
+      <!-- <li>Bonus: Mettre un favicon</li> -->
       <li>Bonus: gérer en js, un refresh automatique de la page toutes les X seconds</li>
-      <li>Bonus: Au hover sur les capteurs, afficher un tooltip avec de la data supplémentaire (@last_measure.data)</li>
+      <!-- <li>Bonus: Au hover sur les capteurs, afficher un tooltip avec de la data supplémentaire (@last_measure.data)</li> -->
     </ul>
   </section>
 
@@ -19,7 +28,7 @@
   </section>
 
   <section>
-    <h1 style="font-size:24px">RETRIEVED DATA</h1>
+    <h2>RETRIEVED DATA</h2>
     <div style="max-height:400px; overflow-y: scroll">
     <% @pushes.each do |push| %>
       <div class="data-block">
