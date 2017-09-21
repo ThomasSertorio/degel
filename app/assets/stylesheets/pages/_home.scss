@@ -2,6 +2,109 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+.blink {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  animation: blink-animation 2s infinite;
+  color: red;
+  border: 1px solid white;
+}
+@keyframes blink-animation {
+  0% { opacity: 0.3;}
+  100% { opacity: 0.9;}
+}
+.sign_out{
+  @media (max-width: $screen-xs){
+    display: none;
+  }
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #005898;
+}
+.sign_out:hover{
+  color: darken(#005898, 5%);
+}
+.logo{
+  @media (max-width: $screen-xs){
+    display: none;
+  }
+  position: fixed;
+  text-align: center;
+  top: 10px;
+  left: 10px;
+  img {
+    width: 100px;
+  }
+  div {
+    font-weight: 100;
+    letter-spacing: 2px;
+  }
+}
+#supervision{
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+body {
+  background: #eee;
+}
+
+section {
+  background: white;
+  border-radius: 2px;
+  margin: 2rem;
+  box-shadow: lightgrey 0 0 5px;
+  overflow: hidden;
+  @media (max-width: $screen-xs){
+    margin: 2rem 0;
+  }
+  &>h1 {
+    margin: 1.5rem;
+    font-weight: bold;
+  }
+  &>h2 {
+    font-weight: 100;
+    text-align:center;
+    font-size: 24px;
+    background: grey;
+    padding: 1em;
+    margin: 0;
+    color: white;
+  }
+  &>h3 {
+    margin: 0 0 2rem;
+  }
+  .help-block {
+    margin: 1em 0 -1rem;
+  }
+}
+
+samp {
+  margin-top: .25em;
+  display: block;
+}
+
+svg:not(:root) {
+    overflow: visible;
+}
+
+hr {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.flex {
+  display: flex;
+  &.center {
+    align-items: center;
+    justify-content: center;
+  }
+}
 
 .sensor {
   display: flex;
@@ -19,4 +122,19 @@
   &-status_true{
     background-color: green;
   }
+}
+
+.paddingContainer {
+  padding: 2rem;
+}
+
+.train-switch {
+  max-width: 100%;
+  margin: 2rem auto;
+  display: block;
+}
+
+.data-block {
+  padding: 2rem;
+  padding-bottom: 0;
 }

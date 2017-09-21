@@ -1,0 +1,67 @@
+<svg class="train-switch" width="802px" height="403px" viewBox="0 0 802 403" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>train.switch</title>
+    <defs>
+        <path d="M9.4494355e-15,399.108209 L797.615713,399.108209 L797.615713,263.85246 L424.819428,263.85246 C531.167699,176.865923 655.433127,134.072831 797.615713,135.473185 C797.615713,135.819589 797.615713,-1.63618975 797.615713,0.0147536497 C373.500094,5.65268971 379.931743,257.556674 -3.69517017e-15,263.85246 C-2.12213111e-14,263.85246 -1.68397759e-14,308.93771 9.4494355e-15,399.108209 Z" id="path-1"></path>
+        <path d="M797.615713,0 C373.500094,5.63793606 379.931743,257.54192 0,263.837706" id="path-3"></path>
+        <path d="M1.92732901,345.529923 C423.551739,342.511792 399.432488,82.0238797 796.937647,82.838296" id="path-4"></path>
+        <path d="M1.88679245,5.66037736 L796.358614,5.66037736" id="path-5"></path>
+        <path d="M1.88679245,88.6792453 L798.193683,88.6792453" id="path-6"></path>
+        <circle id="path-7" cx="314.5" cy="13.5" r="13.5"></circle>
+        <circle id="path-9" cx="13.5" cy="218.5" r="13.5"></circle>
+        <circle id="path-11" cx="307.5" cy="225.5" r="13.5"></circle>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="train.switch">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Path" stroke="#000000" stroke-width="3.77358491" fill="#D8D8D8" xlink:href="#path-1"></use>
+            <g id="Group-4" mask="url(#mask-2)" stroke="#000000" stroke-width="3.77358491">
+                <g transform="translate(358.490566, 52.830189)">
+                    <path d="M2.21006005,92.9058403 C50.4699718,61.5165795 98.2734701,29.0760951 157.581142,2.78603742 L209.588784,124.897098 C164.533914,143.426403 121.947811,168.045028 81.8304747,198.752972 L2.2100601,92.9058403 Z" id="Combined-Shape" fill="#A2A2A2" fill-rule="evenodd"></path>
+                    <path d="M171.698113,213.207547 L171.698113,346.623921" id="Line" fill="none" stroke-linecap="square"></path>
+                </g>
+            </g>
+            <g id="Rails" mask="url(#mask-2)">
+                <g transform="translate(0.000000, 26.415094)">
+                    <g id="Group-2">
+                        <g id="Path-Copy">
+                            <use stroke="#000000" stroke-width="11.3207547" xlink:href="#path-3"></use>
+                            <use stroke="#979797" stroke-width="3.77358491" xlink:href="#path-3"></use>
+                        </g>
+                        <g id="Path-2">
+                            <use stroke="#000000" stroke-width="11.3207547" xlink:href="#path-4"></use>
+                            <use stroke="#979797" stroke-width="3.77358491" xlink:href="#path-4"></use>
+                        </g>
+                    </g>
+                    <g id="Group" transform="translate(0.000000, 256.603774)" stroke-linecap="square">
+                        <g id="Line-2">
+                            <use stroke="#000000" stroke-width="11.3207547" xlink:href="#path-5"></use>
+                            <use stroke="#979797" stroke-width="3.77358491" xlink:href="#path-5"></use>
+                        </g>
+                        <g id="Line-3">
+                            <use stroke="#000000" stroke-width="11.3207547" xlink:href="#path-6"></use>
+                            <use stroke="#979797" stroke-width="3.77358491" xlink:href="#path-6"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g id="Sensors" mask="url(#mask-2)">
+                <g transform="translate(222.000000, 91.000000)">
+                    <g id="Sensor.3" class="sensor_svg">
+                        <title>Capteur 1</title>
+                        <use fill="<%= @last_measure.data['reg3'].to_i >= 1 ? '#27ae60' : '#e74c3c' %>" fill-rule="evenodd" xlink:href="#path-7"></use>
+                    </g>
+                    <g id="Sensor.2" class="sensor_svg">
+                        <title>Capteur 2</title>
+                        <use fill="<%= @last_measure.data['reg2'].to_i >= 1 ? '#27ae60' : '#e74c3c' %>" fill-rule="evenodd" xlink:href="#path-9"></use>
+                    </g>
+                    <g id="Sensor.1" class="sensor_svg">
+                        <title>Capteur 3</title>
+                        <use fill="<%= @last_measure.data['reg1'].to_i >= 1 ? '#27ae60' : '#e74c3c' %>" fill-rule="evenodd" xlink:href="#path-11"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
