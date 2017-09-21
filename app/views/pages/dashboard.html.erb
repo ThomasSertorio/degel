@@ -1,5 +1,6 @@
 <div class="container">
-  <div>
+
+  <section>
     <p>TODO:</p>
     <ul>
       <li>Intégrer une image (svg, png) ou du HTML d'un aiguillage en vertical. Voir exemple ci dessous pour intégration avec assets</li>
@@ -11,40 +12,23 @@
       <li>Bonus: gérer en js, un refresh automatique de la page toutes les X seconds</li>
       <li>Bonus: Au hover sur les capteurs, afficher un tooltip avec de la data supplémentaire (@last_measure.data)</li>
     </ul>
-  </div>
-  <div>
-    <div class="sensor">
-      <span class="sensor-status <%= @last_measure.data['reg1'].to_i >= 1 ? 'sensor-status_true' : 'sensor-status_false' %>"></span>
-      <span class="sensor-name">Capteur 1</span>
-    </div>
-    <div class="sensor">
-      <span class="sensor-status <%= @last_measure.data['reg2'].to_i >= 1 ? 'sensor-status_true' : 'sensor-status_false' %>"></span>
-      <span class="sensor-name">Capteur 2</span>
-    </div>
-    <div class="sensor">
-      <span class="sensor-status <%= @last_measure.data['reg3'].to_i >= 1 ? 'sensor-status_true' : 'sensor-status_false' %>"></span>
-      <span class="sensor-name">Capteur 3</span>
-    </div>
-  </div>
-  <div>
-    <%= image_tag ('aiguillage.jpg'), class: "some_class_to_define_in_css" %>
-  </div>
-  <div style="display: flex; align-items:center; justify-content:center; height: 100vh">
-    <div style="width: 90%; background-color: #efefef; border-radius: 2px; padding: 1em">
-        <h1 style="font-size:24px">RETRIEVED DATA</h1>
-        <div style="max-height:400px; overflow-y: scroll">
-        <% @pushes.each do |push| %>
-          <div>
-            <%= push.created_at.strftime('%d/%m/%Y %l:%M %p') %><br/>
-            <%= push.data %><br/>
-            ----------------------------
-            <br/>
-          </div>
-        <% end %>
+  </section>
 
-        </div>
+  <section>
+    <%= render :partial => 'svg/train-switch.svg' %>
+  </section>
 
+  <section>
+    <h1 style="font-size:24px">RETRIEVED DATA</h1>
+    <div style="max-height:400px; overflow-y: scroll">
+    <% @pushes.each do |push| %>
+      <div class="data-block">
+        <div><b><%= push.created_at.strftime('%d/%m/%Y %l:%M %p') %></b></div>
+        <samp><%= push.data %></samp>
+        <hr>
+      </div>
+    <% end %>
     </div>
+  </section>
 
-  </div>
 </div>

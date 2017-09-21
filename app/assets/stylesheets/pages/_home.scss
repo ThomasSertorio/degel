@@ -3,6 +3,39 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 
+body {
+  background: #eee;
+}
+
+section {
+  background: white;
+  border-radius: 10px;
+  margin: 2rem;
+  box-shadow: lightgrey 0 0 5px;
+  overflow: hidden;
+  &>h1 {
+    font-size: 24px;
+    background: grey;
+    padding: 1em;
+    margin: 0;
+    color: white;
+  }
+}
+
+samp {
+  margin-top: .25em;
+  display: block;
+}
+
+svg:not(:root) {
+    overflow: visible;
+}
+
+hr {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
 .sensor {
   display: flex;
   align-items:center;
@@ -19,4 +52,15 @@
   &-status_true{
     background-color: green;
   }
+}
+
+.train-switch {
+  max-width: 100%;
+  margin: 2rem auto;
+  display: block;
+}
+
+.data-block {
+  padding: 2rem;
+  padding-bottom: 0;
 }
